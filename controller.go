@@ -8,8 +8,8 @@ import (
 )
 
 
-func returnAllUsers(w http.ResponseWriter, r *http.Request) {
-	var users News
+func getData(w http.ResponseWriter, r *http.Request) {
+	var news News
 	var arr_user []News
 	var response Response
 
@@ -22,12 +22,12 @@ func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 	}
 
 	for rows.Next() {
-		if err := rows.Scan(&users.Id, &users.Author, &users.Channel, &users.Content, );
+		if err := rows.Scan(&news.Id, &news.Author, &news.Channel, &news.Content, );
 		err != nil {
 			log.Fatal(err.Error())
 
 		} else {
-			arr_user = append(arr_user, users)
+			arr_user = append(arr_user, news)
 		}
 	}
 

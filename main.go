@@ -12,7 +12,7 @@ import (
 func main() {
 
 	router := mux.NewRouter()
-	router.HandleFunc("/getnews", returnAllUsers).Methods("GET")
+	router.HandleFunc("/getnews", getData).Methods("GET")
 	router.HandleFunc("/addnews", addData).Methods("POST")
 	http.Handle("/", router)
 	fmt.Println("Connected to port 1234")
